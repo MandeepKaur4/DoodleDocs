@@ -98,7 +98,7 @@ getAllNotes()
 }
 const updateIsPinned= async(noteData)=>{
   try{
-const res= await axios.put("http://localhost:3000/api/note/update-note-pinned/"+noteId, {ispinned:!noteData.isPinned},{withCredentials:true})
+const res= await axios.put(`http://localhost:3000/api/note/update-note-pinned/${noteId}`, {ispinned:!noteData.isPinned},{withCredentials:true})
 
 if(res.data.success === false){
   toast.error(res.data.message)
